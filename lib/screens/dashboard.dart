@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:pre_cure/constants.dart';
+import 'package:pre_cure/widgets/customListTile.dart';
+import 'package:pre_cure/widgets/custome_nav_bar.dart';
+import 'package:pre_cure/widgets/headerBar.dart';
 
 class DashBoard extends StatelessWidget {
   @override
@@ -19,6 +22,7 @@ class DashBoard extends StatelessWidget {
       child: Column(
         children: [
           Container(
+            padding: EdgeInsets.only(bottom: 5),
             decoration: BoxDecoration(
               boxShadow: [
                 BoxShadow(
@@ -37,144 +41,56 @@ class DashBoard extends StatelessWidget {
             height: kHeight * 0.88,
             width: kWidth,
             child: SafeArea(
-              child: Column(
-                children: [
-                  Container(
-                    padding: EdgeInsets.only(
-                      left: 30,
-                      right: 30,
-                      top: 10,
-                    ),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(35),
-                        bottomRight: Radius.circular(35),
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    Container(
+                      padding: EdgeInsets.only(
+                        left: 30,
+                        right: 30,
+                        top: 10,
+                        // bottom: 60,
+                      ),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.only(
+                          bottomLeft: Radius.circular(35),
+                          bottomRight: Radius.circular(35),
+                        ),
+                      ),
+                      width: kWidth,
+                      height: kHeight * 0.35,
+                      child: Column(
+                        children: [
+                          HeaderBar(),
+                        ],
                       ),
                     ),
-                    width: kWidth,
-                    height: kHeight * 0.35,
-                    child: Column(
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              'Dashboard',
-                              style: TextStyle(
-                                fontSize: 25,
-                                fontFamily: 'Poppins',
-                                fontWeight: FontWeight.w900,
-                              ),
-                            ),
-                            CircleAvatar(
-                              child: Icon(Icons.person),
-                            ),
-                          ],
-                        ),
-                      ],
+                    SizedBox(
+                      height: 20,
                     ),
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 30),
-                    child: Column(
-                      children: [
-                        Card(
-                          elevation: 1,
-                          shadowColor: KmainColor,
-                          child: Container(
-                            height: 70,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            child: Center(
-                              child: ListTile(
-                                //tileColor: Colors.white,
-                                leading: Container(
-                                  decoration: BoxDecoration(
-                                    color: KmainColor,
-                                    borderRadius: BorderRadius.circular(10),
-                                  ),
-                                  width: 50,
-                                  height: 50,
-                                  child: Icon(
-                                    Icons.folder_open_rounded,
-                                    size: 30,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        )
-                      ],
+                    CustomListTile(),
+                    SizedBox(
+                      height: 10,
                     ),
-                  ),
-                ],
+                    CustomListTile(),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    CustomListTile(),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    CustomListTile(),
+                  ],
+                ),
               ),
             ),
           ),
           SafeArea(
             child: Align(
               alignment: FractionalOffset.bottomCenter,
-              child: Container(
-                margin: EdgeInsets.only(left: 30, right: 30),
-                // margin: EdgeInsets.only(bottom: 5),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Row(
-                      children: [
-                        Icon(
-                          Icons.apps,
-                          color: Colors.white60,
-                          size: 35,
-                        ),
-                        SizedBox(
-                          width: 40,
-                        ),
-                        Icon(
-                          FontAwesomeIcons.stream,
-                          color: Colors.white60,
-                          size: 25,
-                        ),
-                      ],
-                    ),
-                    CircleAvatar(
-                      radius: 30,
-                      backgroundColor: Colors.white,
-                      child: CircleAvatar(
-                        radius: 28,
-                        backgroundColor: Colors.redAccent,
-                        child: Icon(
-                          Icons.add,
-                          size: 40,
-                        ),
-                      ),
-                    ),
-                    Row(
-                      children: [
-                        Icon(
-                          Icons.featured_play_list_outlined,
-                          color: Colors.white60,
-                          size: 30,
-                        ),
-                        SizedBox(
-                          width: 40,
-                        ),
-                        Icon(
-                          FontAwesomeIcons.commentDots,
-                          color: Colors.white60,
-                          size: 30,
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
+              child: BottomNavBbar(),
             ),
           ),
         ],
