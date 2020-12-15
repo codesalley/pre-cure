@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:pre_cure/screens/healthTips.dart';
 
 class BottomNavBbar extends StatelessWidget {
   const BottomNavBbar({
@@ -18,18 +19,22 @@ class BottomNavBbar extends StatelessWidget {
         children: [
           Row(
             children: [
-              Icon(
-                Icons.apps,
-                color: Colors.white,
-                size: iconSize,
+              GestureDetector(
+                child: Icon(
+                  Icons.apps,
+                  color: Colors.white,
+                  size: iconSize,
+                ),
               ),
               SizedBox(
                 width: 40,
               ),
-              Icon(
-                FontAwesomeIcons.stream,
-                color: Colors.white54,
-                size: 20,
+              GestureDetector(
+                child: Icon(
+                  FontAwesomeIcons.stream,
+                  color: Colors.white54,
+                  size: 20,
+                ),
               ),
             ],
           ),
@@ -48,18 +53,25 @@ class BottomNavBbar extends StatelessWidget {
           ),
           Row(
             children: [
-              Icon(
-                Icons.featured_play_list_outlined,
-                color: Colors.white54,
-                size: 25,
+              GestureDetector(
+                child: Icon(
+                  Icons.featured_play_list_outlined,
+                  color: Colors.white54,
+                  size: 25,
+                ),
               ),
               SizedBox(
                 width: 40,
               ),
-              Icon(
-                FontAwesomeIcons.commentDots,
-                color: Colors.white54,
-                size: 25,
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, HealthTips.id);
+                },
+                child: Icon(
+                  FontAwesomeIcons.commentDots,
+                  color: Colors.white54,
+                  size: 25,
+                ),
               ),
             ],
           ),

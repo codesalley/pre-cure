@@ -2,9 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:pre_cure/constants.dart';
 
 class CustomListTile extends StatelessWidget {
-  const CustomListTile({
-    Key key,
-  }) : super(key: key);
+  const CustomListTile({Key key, this.color, this.icon, this.name, this.count})
+      : super(key: key);
+
+  final Color color;
+  final String name;
+  final IconData icon;
+  final int count;
 
   @override
   Widget build(BuildContext context) {
@@ -31,19 +35,20 @@ class CustomListTile extends StatelessWidget {
                     width: 50,
                     height: 50,
                     child: Icon(
-                      Icons.folder_open_rounded,
+                      icon,
                       size: 30,
+                      color: color,
                     ),
                   ),
                   title: Text(
-                    'Total perception',
+                    name,
                     style: TextStyle(
                       fontFamily: 'Poppins',
                       fontWeight: FontWeight.w400,
                     ),
                   ),
                   trailing: Text(
-                    '23',
+                    count == null ? '0' : '$count',
                     style: TextStyle(
                       fontFamily: 'Poppins',
                       fontWeight: FontWeight.w400,
