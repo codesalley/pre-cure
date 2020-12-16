@@ -11,11 +11,17 @@ const kOngoingColor = Colors.purple;
 const kHeaderTextStyle = TextStyle(
   fontFamily: 'Poppins',
   fontSize: 25,
-  fontWeight: FontWeight.w700,
+  fontWeight: FontWeight.w600,
 );
 
 const ktileTextStyle = TextStyle(
   fontFamily: 'Poppins',
   fontSize: 16,
   fontWeight: FontWeight.w400,
+);
+
+const kaddBottomTextstyle = TextStyle(
+  color: Colors.white,
+  fontFamily: 'Poppins',
+  fontWeight: FontWeight.w600,
 );

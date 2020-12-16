@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pre_cure/constants.dart';
+import 'package:pre_cure/widgets/addBottom.dart';
 import 'package:pre_cure/widgets/headerRow.dart';
 
 class TaskList extends StatelessWidget {
@@ -21,23 +22,26 @@ class TaskList extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    'Today',
-                    style: kHeaderTextStyle.copyWith(
-                      fontSize: 20,
-                    ),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        '24 December 2020',
+                      ),
+                      Text(
+                        'Today',
+                        style: kHeaderTextStyle.copyWith(
+                          fontSize: 20,
+                        ),
+                      ),
+                    ],
                   ),
-                  FlatButton(
-                    color: Colors.redAccent,
-                    onPressed: () => {},
-                    child: Row(
-                      children: [
-                        Icon(Icons.add),
-                        Text('Add Drug'),
-                      ],
-                    ),
-                  ),
+                  AddBottom(),
                 ],
+              ),
+              Row(
+                children: [],
               ),
             ],
           ),
