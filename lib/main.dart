@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pre_cure/constants.dart';
+import 'package:pre_cure/screens/addScreen.dart';
 import 'package:pre_cure/screens/dashboard.dart';
 import 'package:pre_cure/screens/dugInfo.dart';
 import 'package:pre_cure/screens/healthTips.dart';
@@ -29,7 +30,8 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: KmainColor,
         body: PageStorage(
@@ -76,16 +78,19 @@ class _MyAppState extends State<MyApp> {
                       color:
                           currentpageindex == 1 ? Colors.white : Colors.white54,
                     )),
-                CircleAvatar(
-                  radius: 30,
-                  backgroundColor: Colors.white,
+                GestureDetector(
+                  onTap: () => Get.to(AddNew()),
                   child: CircleAvatar(
-                    backgroundColor: Colors.redAccent,
-                    radius: 28,
-                    child: Icon(
-                      Icons.add,
-                      color: Colors.white,
-                      size: 40,
+                    radius: 30,
+                    backgroundColor: Colors.white,
+                    child: CircleAvatar(
+                      backgroundColor: Colors.redAccent,
+                      radius: 28,
+                      child: Icon(
+                        Icons.add,
+                        color: Colors.white,
+                        size: 40,
+                      ),
                     ),
                   ),
                 ),

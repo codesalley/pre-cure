@@ -7,7 +7,6 @@ import '../constants.dart';
 class DashBoard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final kwidth = MediaQuery.of(context).size.width;
     final kheight = MediaQuery.of(context).size.height;
     return SafeArea(
       child: SingleChildScrollView(
