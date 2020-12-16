@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pre_cure/widgets/customTile.dart';
+import 'package:pre_cure/widgets/headerRow.dart';
 
 import '../constants.dart';
 
@@ -25,19 +26,9 @@ class DashBoard extends StatelessWidget {
               ),
               child: Column(
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        'Dashboard',
-                        style: kHeaderTextStyle,
-                      ),
-                      CircleAvatar(
-                        child: Icon(
-                          Icons.person,
-                        ),
-                      )
-                    ],
+                  HeaderRow(
+                    title: 'Dashboard',
+                    icon: Icons.person,
                   ),
                 ],
               ),

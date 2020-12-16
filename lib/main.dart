@@ -80,7 +80,7 @@ class _MyAppState extends State<MyApp> {
                   radius: 30,
                   backgroundColor: Colors.white,
                   child: CircleAvatar(
-                    backgroundColor: Colors.red,
+                    backgroundColor: Colors.redAccent,
                     radius: 28,
                     child: Icon(
                       Icons.add,
